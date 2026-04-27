@@ -1,0 +1,8 @@
+# ── Ejemplo 2: sentencias simples ────────────────────────────────────────────
+# Simbolo inicial: S
+
+S  -> if ( C ) S | if ( C ) S else S | id = E ;
+C  -> E relop E
+E  -> E + T | T
+T  -> T * F | F
+F  -> ( E ) | id | num

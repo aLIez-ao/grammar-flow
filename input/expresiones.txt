@@ -1,0 +1,14 @@
+# ── Ejemplo 1: gramatica de expresiones aritmeticas ──────────────────────────
+# Simbolo inicial: E
+# Resultado esperado:
+#   PRIMERO(E) = PRIMERO(T) = PRIMERO(F) = { id, ( }
+#   PRIMERO(E')= { +, EPS }   PRIMERO(T')= { *, EPS }
+#   SIGUIENTE(E) = SIGUIENTE(E') = { ), $ }
+#   SIGUIENTE(T) = SIGUIENTE(T') = { +, ), $ }
+#   SIGUIENTE(F) = { *, +, ), $ }
+
+E  -> T E'
+E' -> + T E' | EPS
+T  -> F T'
+T' -> * F T' | EPS
+F  -> ( E ) | id
