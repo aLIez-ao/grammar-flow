@@ -36,6 +36,9 @@ brew install cmake
 ## Instalación y compilación
 
 ```bash
+# 0. Limpiar (en caso de error)
+rm -rf build
+
 # 1. Clonar o descomprimir el proyecto
 cd grammar-flow
 
