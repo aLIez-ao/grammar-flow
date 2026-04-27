@@ -12,6 +12,12 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# ── Vinculación Estática (Para evitar errores de DLL en Windows) ──────────────
+if(WIN32 AND NOT MSVC)
+    # Esto incluye libstdc++ y libgcc dentro del .exe
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static -static-libgcc -static-libstdc++")
+endif()
+
 # ── Sources ───────────────────────────────────────────────────────────────────
 set(SOURCES
     src/main.cpp
@@ -23,14 +29,12 @@ set(SOURCES
     src/analysis/follow_set.cpp
 )
 
-include_directories(src)
-include_directories(src/core)
-include_directories(src/io)
-include_directories(src/analysis)
-
 add_executable(grammar-flow ${SOURCES})
+
+# ── Includes ──────────────────────────────────────────────────────────────────
+target_include_directories(grammar-flow PRIVATE src)
 
 # ── Output directory ──────────────────────────────────────────────────────────
 set_target_properties(grammar-flow PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/bin
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )
