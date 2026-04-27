@@ -1,3 +1,0 @@
-E:/_Documentos/Proyectos/_universidad/compiladores/grammar-flow/build/CMakeFiles/grammar-flow.dir
-E:/_Documentos/Proyectos/_universidad/compiladores/grammar-flow/build/CMakeFiles/edit_cache.dir
-E:/_Documentos/Proyectos/_universidad/compiladores/grammar-flow/build/CMakeFiles/rebuild_cache.dir

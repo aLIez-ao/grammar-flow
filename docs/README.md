@@ -168,6 +168,19 @@ grammar-flow/
 │       ├── follow_set.h        # Cálculo de conjuntos SIGUIENTE
 │       └── follow_set.cpp
 │
+├── tests/
+│   ├── expeted/            
+│   │   ├── epsilon_chain_expected.txt  
+│   │   └── expresiones_expected.txt         
+│   │ 
+│   └── grammars/
+│       ├── epsilon_chain.txt           
+│       ├── epsilon_productions.txt  
+│       ├── expresiones.txt           
+│       ├── left_recursion.txt  
+│       ├── sentencias.txt          
+│       └── undefined_symbol.txt
+│
 └── input/
     ├── expresiones.txt         # Gramática de expresiones aritméticas
     └── sentencias.txt          # Gramática con recursión izquierda (ejemplo de error)

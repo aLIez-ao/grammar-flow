@@ -1,0 +1,16 @@
+# Salida esperada para: tests/grammars/expresiones.txt
+# Gramatica: expresiones aritmeticas sin recursion izquierda
+
+PRIMERO:
+  E  = { (, id }
+  E' = { +, EPS }
+  T  = { (, id }
+  T' = { *, EPS }
+  F  = { (, id }
+
+SIGUIENTE:
+  E  = { $, ) }
+  E' = { $, ) }
+  T  = { $, ), + }
+  T' = { $, ), + }
+  F  = { $, ), *, + }

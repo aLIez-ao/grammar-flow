@@ -1,0 +1,7 @@
+# ── Caso: recursion izquierda directa ────────────────────────────────────────
+# Resultado esperado: ERROR de validacion
+# Mensaje esperado:   Recursion izquierda directa en: E -> E ...
+
+E -> E + T | T
+T -> T * F | F
+F -> ( E ) | id

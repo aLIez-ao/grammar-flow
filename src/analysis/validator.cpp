@@ -32,17 +32,27 @@ void Validator::checkLeftRecursion(const Grammar& g, ValidationResult& r) {
 }
 
 // ── Rule 2: Undefined non-terminals ─────────────────────────────────────────
-// A symbol flagged as NT (appears on some LHS) but has no production of its
-// own will cause the algorithm to loop or produce wrong results.
+// A symbol that LOOKS like a non-terminal (starts with an uppercase letter)
+// appears in the RHS of a rule but has no production of its own.
+//
+// Convention used: NT names start with an uppercase letter (A-Z).
+// Terminals are lowercase words, digits, or operator symbols.
+// ─────────────────────────────────────────────────────────────────────────────
+static bool looksLikeNT(const std::string& name) {
+    return !name.empty() && std::isupper(static_cast<unsigned char>(name[0]));
+}
+
 void Validator::checkUndefinedSymbols(const Grammar& g, ValidationResult& r) {
-    // Build set of all seen errors to avoid duplicates
     std::set<std::string> seen;
 
     for (const auto& [nt, prods] : g.rules) {
         for (const auto& prod : prods) {
             for (const auto& sym : prod) {
-                if (!sym.isNT || sym.isEpsilon()) continue;
-                if (g.rules.find(sym.name) == g.rules.end()) {
+                if (sym.isEpsilon()) continue;
+
+                // Flag any RHS symbol that looks like a NT but has no rule
+                if (looksLikeNT(sym.name) &&
+                    g.rules.find(sym.name) == g.rules.end()) {
                     if (seen.insert(sym.name).second) {
                         std::ostringstream oss;
                         oss << "No-terminal '"

@@ -1,0 +1,14 @@
+# Salida esperada para: tests/grammars/epsilon_chain.txt
+# Prueba clave: epsilon debe propagarse a traves de toda la cadena A B C
+
+PRIMERO:
+  S = { a, b, c, EPS }
+  A = { a, EPS }
+  B = { b, EPS }
+  C = { c, EPS }
+
+SIGUIENTE:
+  S = { $ }
+  A = { b, c, $ }
+  B = { c, $ }
+  C = { $ }

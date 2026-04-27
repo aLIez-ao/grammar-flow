@@ -1,0 +1,17 @@
+# ── Caso: propagacion de epsilon en cadenas largas ───────────────────────────
+# Resultado esperado: OK
+# Prueba que PRIMERO propaga epsilon correctamente a traves de multiples NT
+#
+# PRIMERO(S) = { a, b, c, EPS }
+# PRIMERO(A) = { a, EPS }
+# PRIMERO(B) = { b, EPS }
+# PRIMERO(C) = { c, EPS }
+# SIGUIENTE(S) = { $ }
+# SIGUIENTE(A) = { b, c, $ }
+# SIGUIENTE(B) = { c, $ }
+# SIGUIENTE(C) = { $ }
+
+S -> A B C
+A -> a | EPS
+B -> b | EPS
+C -> c | EPS

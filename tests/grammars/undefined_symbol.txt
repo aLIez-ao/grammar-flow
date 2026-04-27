@@ -1,0 +1,8 @@
+# ── Caso: no terminal sin produccion propia ───────────────────────────────────
+# Resultado esperado: ERROR de validacion
+# Mensaje esperado:   No-terminal 'X' aparece en las producciones pero no tiene regla propia.
+
+S -> A B
+# X se usa aqui pero nunca tiene produccion propia
+A -> a X
+B -> b

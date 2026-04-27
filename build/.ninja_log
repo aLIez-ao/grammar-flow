@@ -1,9 +1,0 @@
-# ninja log v7
-59	723	7989792094340369	CMakeFiles/grammar-flow.dir/src/core/grammar.cpp.obj	78d9780714f12a51
-51	1087	7989792094260289	CMakeFiles/grammar-flow.dir/src/main.cpp.obj	5b4989d4ee53fc6
-90	1088	7989792094661961	CMakeFiles/grammar-flow.dir/src/analysis/first_set.cpp.obj	9eedc29d09745d3a
-81	1114	7989792094570178	CMakeFiles/grammar-flow.dir/src/analysis/validator.cpp.obj	8b7d436c398ca707
-98	1125	7989792094736246	CMakeFiles/grammar-flow.dir/src/analysis/follow_set.cpp.obj	825288dab4d7751
-75	1144	7989792094505770	CMakeFiles/grammar-flow.dir/src/io/display.cpp.obj	494563040df1c9a6
-66	1784	7989792094417317	CMakeFiles/grammar-flow.dir/src/io/parser.cpp.obj	8b8379a6981b59e
-1785	2035	7989792111604434	bin/grammar-flow.exe	295525480b4a85f5

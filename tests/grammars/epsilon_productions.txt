@@ -1,0 +1,12 @@
+# ── Caso: producciones con epsilon ───────────────────────────────────────────
+# Resultado esperado: OK
+# PRIMERO(S) = { a, b, EPS }
+# PRIMERO(A) = { a, EPS }
+# PRIMERO(B) = { b, EPS }
+# SIGUIENTE(S) = { $ }
+# SIGUIENTE(A) = { b, $ }
+# SIGUIENTE(B) = { $ }
+
+S -> A B
+A -> a | EPS
+B -> b | EPS

@@ -1,0 +1,30 @@
+# ── Build ─────────────────────────────────────────────────────────────────────
+build/
+cmake-build-*/
+
+# ── Compilados ────────────────────────────────────────────────────────────────
+*.o
+*.a
+*.so
+*.out
+*.exe
+
+# ── CMake generados ───────────────────────────────────────────────────────────
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+Makefile
+install_manifest.txt
+
+# ── VSCode ────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.vscode/ipch/
+.cache/
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Windows ───────────────────────────────────────────────────────────────────
+Thumbs.db
+desktop.ini
