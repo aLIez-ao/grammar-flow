@@ -140,7 +140,7 @@ std::optional<Grammar> Parser::fromFile(const std::string& filename) {
 
 std::optional<Grammar> Parser::fromConsole() {
     std::cout << "\n┌─────────────────────────────────────────────────────┐\n";
-    std::cout << "│            Ingreso interactivo de gramatica          │\n";
+    std::cout << "│            Ingreso interactivo de gramatica         │\n";
     std::cout << "└─────────────────────────────────────────────────────┘\n";
     std::cout << "  Formato:  NoTerminal -> simbolo1 simbolo2 | alternativa\n";
     std::cout << "  Epsilon:  use 'EPS' o 'null'\n";

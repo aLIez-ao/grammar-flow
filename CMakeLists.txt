@@ -14,7 +14,6 @@ endif()
 
 # ── Vinculación Estática (Para evitar errores de DLL en Windows) ──────────────
 if(WIN32 AND NOT MSVC)
-    # Esto incluye libstdc++ y libgcc dentro del .exe
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static -static-libgcc -static-libstdc++")
 endif()
 
